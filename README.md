@@ -194,7 +194,7 @@ To install, drop the "_**efficiency-nodes-comfyui**_" folder into the "_**...\Co
 - **Extensions and Custom Nodes**:
 -[Plugins for Comfy List (eng)](https://github.com/WASasquatch/comfyui-plugins) by @WASasquatch
 
--[ComfyUI tag on CivitAI (eng)](https://civitai.com/tag/comfyui)
+- [ComfyUI tag on CivitAI (eng)](https://civitai.com/tag/comfyui)
 - 
   
 - [Tomoaki's personal Wiki (jap)](https://comfyui.creamlab.net/guides/) by @tjhayasaka
