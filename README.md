@@ -1,4 +1,4 @@
-✨🍬Planning to help this branch stay alive and any issues will try to solve or fix .. But will be slow as I run mnay github files .
+✨🍬Planning to help this branch stay alive and any issues will try to solve or fix .. But will be slow as I run many github repos .
 
 
 <b> Efficiency Nodes for ComfyUI Version 2.0+
