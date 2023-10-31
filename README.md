@@ -148,7 +148,7 @@
 ## Workflow Examples:
 
 1. HiRes-Fixing<br>
-   [<img src="(https://github.com/jags111/efficiency-nodes-comfyui/blob/main/workflows/HiResfix_workflow.png)" width="800">](https://github.com/jags111/efficiency-nodes-comfyui/blob/main/workflows/HiResfix_workflow.png)<br>
+   [<img src="[https://github.com/LucianoCirino/efficiency-nodes-comfyui/blob/v2.0/workflows/SDXL%20Refining%20%26%20Noise%20Control%20Script.png](https://github.com/jags111/efficiency-nodes-comfyui/blob/main/workflows/HiResfix_workflow.png)" width="800">](https://github.com/LucianoCirino/efficiency-nodes-comfyui/blob/v2.0/workflows/SDXL%20Refining%20%26%20Noise%20Control%20Script.png)<br>
 
 2. SDXL Refining & **Noise Control Script**<br>
    [<img src="https://github.com/LucianoCirino/efficiency-nodes-comfyui/blob/v2.0/workflows/SDXL%20Refining%20%26%20Noise%20Control%20Script.png" width="800">](https://github.com/LucianoCirino/efficiency-nodes-comfyui/blob/v2.0/workflows/SDXL%20Refining%20%26%20Noise%20Control%20Script.png)<br>
