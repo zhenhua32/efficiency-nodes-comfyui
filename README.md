@@ -5,6 +5,10 @@
 =======
 ### A collection of <a href="https://github.com/comfyanonymous/ComfyUI" >ComfyUI</a> custom nodes to help streamline workflows and reduce total node count.
 ## Releases
+
+Please check out our WIKI for any use cases and new developments including workflow and settings.
+[Efficiency Nodes](https://github.com/jags111/efficiency-nodes-comfyui/wiki)<br>
+
 ### Nodes:
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------->
 <details>
