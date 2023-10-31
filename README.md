@@ -1,7 +1,7 @@
 ✨🍬Planning to help this branch stay alive and any issues will try to solve or fix .. But will be slow as I run mnay github files .
 
 
-<b> Efficiency Nodes for ComfyUI
+<b> Efficiency Nodes for ComfyUI Version 2.0+
 =======
 ### A collection of <a href="https://github.com/comfyanonymous/ComfyUI" >ComfyUI</a> custom nodes to help streamline workflows and reduce total node count.
 ## [Direct Download Link](https://github.com/LucianoCirino/efficiency-nodes-comfyui/releases/download/v2.0/efficiency-nodes-comfyui.7z)
