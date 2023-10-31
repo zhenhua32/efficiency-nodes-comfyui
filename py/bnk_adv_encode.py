@@ -242,13 +242,20 @@ def advanced_encode(clip, text, token_normalization, weight_interpretation, w_ma
         embs_l = None
         embs_g = None
         pooled = None
-        if 'l' in tokenized and isinstance(clip.cond_stage_model, SDXLClipModel):
-            embs_l, _ = advanced_encode_from_tokens(tokenized['l'], 
-                                                 token_normalization, 
-                                                 weight_interpretation, 
-                                                 lambda x: encode_token_weights(clip, x, encode_token_weights_l),
-                                                 w_max=w_max, 
-                                                 return_pooled=False)
+        if 'l' in tokenized:
+            if isinstance(clip.cond_stage_model, SDXLClipModel):
+                embs_l, _ = advanced_encode_from_tokens(tokenized['l'], 
+                                                    token_normalization, 
+                                                    weight_interpretation, 
+                                                    lambda x: encode_token_weights(clip, x, encode_token_weights_l),
+                                                    w_max=w_max, 
+                                                    return_pooled=False)
+            else:
+                return advanced_encode_from_tokens(tokenized['l'], 
+                                                    token_normalization, 
+                                                    weight_interpretation, 
+                                                    lambda x: encode_token_weights(clip, x, encode_token_weights_l),
+                                                    w_max=w_max)
         if 'g' in tokenized:
             embs_g, pooled = advanced_encode_from_tokens(tokenized['g'], 
                                                          token_normalization, 
