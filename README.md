@@ -147,7 +147,7 @@
 
 ## Workflow Examples:
 
-Kindly load all PNG files in same name to comfyUI to get all this workflows. The PNG files have the json embededed into them and are easy to drag and drop !<br>
+Kindly load all PNG files in same name in the (workflow driectory) to comfyUI to get all this workflows. The PNG files have the json embedded into them and are easy to drag and drop !<br>
 
 1. HiRes-Fixing<br>
    [<img src="https://github.com/jags111/efficiency-nodes-comfyui/blob/main/workflows/HiResfix_workflow.png" width="800">](https://github.com/jags111/efficiency-nodes-comfyui/blob/main/workflows/HiResfix_workflow.png)<br>
