@@ -166,6 +166,35 @@
 ### Dependencies
 The python library <i><a href="https://github.com/danthedeckie/simpleeval" >simpleeval</a></i> is required to be installed if you wish to use the **Simpleeval Nodes**.
 <pre>pip install simpleeval</pre>
+Also can be installed with a simple pip command <br>
+'pip install simpleeval'
+
+A single file library for easily adding evaluatable expressions into python projects. Say you want to allow a user to set an alarm volume, which could depend on the time of day, alarm level, how many previous alarms had gone off, and if there is music playing at the time.
+
+check Notes for more information.
 
 ## **Install:**
 To install, drop the "_**efficiency-nodes-comfyui**_" folder into the "_**...\ComfyUI\ComfyUI\custom_nodes**_" directory and restart UI.
+
+## Todo
+
+[ ] Add guidance to notebook
+
+
+# Comfy Resources
+
+**Misc**
+
+
+**Guides**:
+- [Official Examples (eng)](https://comfyanonymous.github.io/ComfyUI_examples/)
+- 
+- [ComfyUI Community Manual (eng)](https://blenderneko.github.io/ComfyUI-docs/) by @BlenderNeko
+
+- **Extensions and Custom Nodes**:
+-[Plugins for Comfy List (eng)](https://github.com/WASasquatch/comfyui-plugins) by @WASasquatch
+
+-[ComfyUI tag on CivitAI (eng)](https://civitai.com/tag/comfyui)
+- 
+  
+- [Tomoaki's personal Wiki (jap)](https://comfyui.creamlab.net/guides/) by @tjhayasaka
