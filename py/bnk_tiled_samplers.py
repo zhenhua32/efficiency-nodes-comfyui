@@ -135,7 +135,7 @@ def sample_common(model, add_noise, noise_seed, tile_width, tile_height, tiling_
             samples += sampler.sigmas[start_at_step].cpu() * model.model.process_latent_out(noise)
 
     #cnets
-     cnets =  [c['control'] for (_, c) in positive + negative if 'control' in c and isinstance(c['control'], comfy.controlnet.ControlNet)]
+    cnets =  [c['control'] for (_, c) in positive + negative if 'control' in c and isinstance(c['control'], comfy.controlnet.ControlNet)]
     cnets = list(set([x for m in cnets for x in recursion_to_list(m, "previous_controlnet")]))
     cnet_imgs = [
         torch.nn.functional.interpolate(m.cond_hint_original, (shape[-2] * 8, shape[-1] * 8), mode='nearest-exact').to('cpu')
@@ -284,7 +284,7 @@ def sample_common(model, add_noise, noise_seed, tile_width, tile_height, tiling_
     out["samples"] = samples.cpu()
     return (out, )
 
-+
+
 class TiledKSampler:
     @classmethod
     def INPUT_TYPES(s):
