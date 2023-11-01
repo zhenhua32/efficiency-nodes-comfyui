@@ -4115,7 +4115,7 @@ class TSC_Tiled_Upscaler:
 
         return {"required": {"upscale_by": ("FLOAT", {"default": 1.25, "min": 0.01, "max": 8.0, "step": 0.05}),
                              "tile_size": ("INT", {"default": 512, "min": 256, "max": MAX_RESOLUTION, "step": 64}),
-                              "tiling_strategy": (["random", "random strict", "padded", 'simple', 'none'],),
+                             "tiling_strategy": (["random", "random strict", "padded", 'simple', 'none'],),
                              "tiling_steps": ("INT", {"default": 30, "min": 1, "max": 10000}),
                              "seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
                              "denoise": ("FLOAT", {"default": .4, "min": 0.0, "max": 1.0, "step": 0.01}),
