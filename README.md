@@ -193,12 +193,30 @@ To install, drop the "_**efficiency-nodes-comfyui**_" folder into the "_**...\Co
 
 
 **Guides**:
-- [Official Examples (eng)](https://comfyanonymous.github.io/ComfyUI_examples/)
-- 
+- [Official Examples (eng)](https://comfyanonymous.github.io/ComfyUI_examples/)- 
 - [ComfyUI Community Manual (eng)](https://blenderneko.github.io/ComfyUI-docs/) by @BlenderNeko
 
-- **Extensions and Custom Nodes**:
-  
+- **Extensions and Custom Nodes**:  
 - [Plugins for Comfy List (eng)](https://github.com/WASasquatch/comfyui-plugins) by @WASasquatch
 - [ComfyUI tag on CivitAI (eng)](https://civitai.com/tag/comfyui)-   
 - [Tomoaki's personal Wiki (jap)](https://comfyui.creamlab.net/guides/) by @tjhayasaka
+
+  ## Support
+If you create a cool image with our nodes, please show your result and message us on twitter at @jags111 or @NeuralismAI .
+
+You can join the <a href="https://discord.gg/vNVqT82W" alt="Neuralism Discord"> NEURALISM AI DISCORD </a> or <a href="https://discord.gg/UmSd4qyh" alt =Jags AI Discord > JAGS AI DISCORD </a> 
+Share your work created with this model. Exchange experiences and parameters. And see more interesting custom workflows.
+
+Support us in Patreon for more future models and new versions of AI notebooks.
+- tip me on <a href="https://www.patreon.com/jags111"> [patreon]</a>
+
+ My buymeacoffee.com pages and links are here and if you feel you are happy with my work just buy me a coffee !
+
+ <a href="https://www.buymeacoffee.com/jagsAI"> coffee for JAGS AI</a> 
+
+Thank you for being awesome!
+
+<img src = "images/ComfyUI_temp_vpose_00005_.png" width = "50%"> 
+
+<!-- end support-pitch -->
+
