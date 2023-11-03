@@ -4110,8 +4110,7 @@ class TSC_Tiled_Upscaler:
     @classmethod
     def INPUT_TYPES(cls):
         # Split the list based on the keyword "tile"
-        cnet_tile_filenames = [name for name in folder_paths.get_filename_list("controlnet") if "tile" in name]
-        #cnet_other_filenames = [name for name in folder_paths.get_filename_list("controlnet") if "tile" not in name]
+        cnet_filenames = [name for name in folder_paths.get_filename_list("controlnet")]
 
         return {"required": {"upscale_by": ("FLOAT", {"default": 1.25, "min": 0.01, "max": 8.0, "step": 0.05}),
                              "tile_size": ("INT", {"default": 512, "min": 256, "max": MAX_RESOLUTION, "step": 64}),
@@ -4120,7 +4119,7 @@ class TSC_Tiled_Upscaler:
                              "seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
                              "denoise": ("FLOAT", {"default": .4, "min": 0.0, "max": 1.0, "step": 0.01}),
                              "use_controlnet": ("BOOLEAN", {"default": False}),
-                             "tile_controlnet": (cnet_tile_filenames,),
+                             "tile_controlnet": (cnet_filenames,),
                              "strength": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 10.0, "step": 0.01}),
                              },
                 "optional": {"script": ("SCRIPT",)}}
