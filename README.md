@@ -190,7 +190,11 @@ To install, drop the "_**efficiency-nodes-comfyui**_" folder into the "_**...\Co
 # Comfy Resources
 
 **Efficiency Linked Repos**
-- [BlenderNeko ComfyUI_ADV_CLIP_emb](https://civitai.com/tag/comfyui](https://github.com/BlenderNeko/ComfyUI_ADV_CLIP_emb))  by@BlenderNeko
+- [BlenderNeko ComfyUI_ADV_CLIP_emb](https://civitai.com/tag/comfyui](https://github.com/BlenderNeko/ComfyUI_ADV_CLIP_emb)  by@BlenderNeko
+- [Chrisgoringe cg-noise](https://github.com/chrisgoringe/cg-noise)  by@Chrisgoringe
+- [pythongosssss ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts)  by@pythongosssss
+- [shiimizu ComfyUI_smZNodes](https://github.com/shiimizu/ComfyUI_smZNodes)  by@shiimizu
+- 
 
 **Guides**:
 - [Official Examples (eng)](https://comfyanonymous.github.io/ComfyUI_examples/)- 
