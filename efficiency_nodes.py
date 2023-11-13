@@ -3874,7 +3874,7 @@ class TSC_ImageOverlay:
                 h_ratio = base_image.size()[1] / overlay_image_size[1]
                 w_ratio = base_image.size()[2] / overlay_image_size[0]
                 ratio = min(h_ratio, w_ratio)
-                overlay_image_size = tuple(int(dimension * ratio) for dimension in overlay_image_size)
+                overlay_image_size = tuple(round(dimension * ratio) for dimension in overlay_image_size)
             elif overlay_resize == "Resize by rescale_factor":
                 overlay_image_size = tuple(int(dimension * rescale_factor) for dimension in overlay_image_size)
             elif overlay_resize == "Resize to width & heigth":
