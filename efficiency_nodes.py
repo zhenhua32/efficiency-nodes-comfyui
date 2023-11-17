@@ -451,10 +451,10 @@ class TSC_KSampler:
 
         #---------------------------------------------------------------------------------------------------------------
         def vae_decode_latent(vae, samples, vae_decode):
-            return VAEDecodeTiled().decode(vae,samples,512)[0] if "tiled" in vae_decode else VAEDecode().decode(vae,samples)[0]
+            return VAEDecodeTiled().decode(vae,samples,320)[0] if "tiled" in vae_decode else VAEDecode().decode(vae,samples)[0]
 
         def vae_encode_image(vae, pixels, vae_decode):
-            return VAEEncodeTiled().encode(vae,pixels,512)[0] if "tiled" in vae_decode else VAEEncode().encode(vae,pixels)[0]
+            return VAEEncodeTiled().encode(vae,pixels,320)[0] if "tiled" in vae_decode else VAEEncode().encode(vae,pixels)[0]
 
         # ---------------------------------------------------------------------------------------------------------------
         def process_latent_image(model, seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image,
