@@ -94,7 +94,7 @@ ext.loadedGraphNode = function(node, app) {
         const seedWidget = node.widgets.find(w => w.name === seedWidgetName);
         const stepsWidget = node.widgets.find(w => w.name === stepsWidgetName);
 
-        if (isNaN(seedWidget.value) || isNaN(stepsWidget.value)) {
+        if (isNaN(seedWidget.value) && isNaN(stepsWidget.value)) {
             console.log("[EfficiencyUpdate]", `Fixing '${node.comfyClass}' node widgets:`, node);
             for (let i = 0; i < node.widgets.length - 1; i++) {
                 node.widgets[i].value = node.widgets[i + 1].value;
