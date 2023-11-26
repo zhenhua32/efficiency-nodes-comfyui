@@ -168,6 +168,9 @@ Kindly load all PNG files in same name in the (workflow driectory) to comfyUI to
 5. Stacking Scripts: **AnimateDiff** + **HiRes-Fix** (with ControlNet)<br>
   [<img src="https://github.com/jags111/efficiency-nodes-comfyui/blob/main/workflows/eff_animatescriptWF001.gif" width="800">](https://github.com/jags111/efficiency-nodes-comfyui/blob/main/workflows/eff_animatescriptWF001.gif)<br>
 
+6. SVD workflow: **Stable Video Diffusion** + *Kohya Hires** (with latent control)<br>
+  <br>
+
 
 ### Dependencies
 The python library <i><a href="https://github.com/danthedeckie/simpleeval" >simpleeval</a></i> is required to be installed if you wish to use the **Simpleeval Nodes**.
