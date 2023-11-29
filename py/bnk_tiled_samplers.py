@@ -123,7 +123,7 @@ def sample_common(model, add_noise, noise_seed, tile_width, tile_height, tiling_
     positive_copy = comfy.sample.convert_cond(positive)
     negative_copy = comfy.sample.convert_cond(negative)
     modelPatches, inference_memory = comfy.sample.get_additional_models(positive_copy, negative_copy, model.model_dtype())
-    comfy.model_management.load_models_gpu([model] + modelPatches, memory_required=(noise.shape[0] * noise.shape[2] * noise.shape[3]) + inference_memory)
+    comfy.model_management.load_models_gpu([model] + modelPatches, model.memory_required(noise.shape) + inference_memory)
     real_model = model.model
 
     sampler = comfy.samplers.KSampler(real_model, steps=steps, device=device, sampler=sampler_name, scheduler=scheduler, denoise=denoise, model_options=model.model_options)
