@@ -75,9 +75,9 @@ Please check out our WIKI for any use cases and new developments including workf
     </ul>
     <ul> 
         <li> Local models
-The node pulls the required files from huggingface hub by default. You can create a models folder and place the modules there if you have a flaky connection or prefer to use it completely offline, it will load them locally instead. The path should be: ComfyUI/custom_nodes/efficiency-nodes-comfy/models
+The node pulls the required files from huggingface hub by default. You can create a models folder and place the modules there if you have a flaky connection or prefer to use it completely offline, it will load them locally instead. The path should be: ComfyUI/custom_nodes/efficiency-nodes-comfyui/models
 
-Alternatively, just clone the entire HF repo to it: (git clone https://huggingface.co/city96/SD-Latent-Upscaler)   to ComfyUI/custom_nodes/efficiency-nodes-comfy/models
+Alternatively, just clone the entire HF repo to it: (git clone https://huggingface.co/city96/SD-Latent-Upscaler)   to ComfyUI/custom_nodes/efficiency-nodes-comfyui/models
 </li>
     </ul>
     <p align="center">
