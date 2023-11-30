@@ -6,9 +6,9 @@ import shutil
 import sys
 import traceback
 
-from  .efficiency_nodes import NODE_CLASS_MAPPINGS
-from  .py.ttl_nn_latent_upscaler import NNLatentUpscale
-from  .py.city96_latent_upscaler import LatentUpscaler
+from  .efficiency_nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
+from  .py.ttl_nn_latent_upscaler import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
+from  .py.city96_latent_upscaler import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
 
 
 WEB_DIRECTORY = "js"
