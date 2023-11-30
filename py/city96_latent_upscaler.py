@@ -85,4 +85,10 @@ class LatentUpscaler:
 			mask = torch.nn.functional.interpolate(samples['noise_mask'], scale_factor=float(scale_factor), mode='bicubic') 
 			return ({"samples": lt, "noise_mask": mask},)
 		return ({"samples": lt},)
-		
+NODE_CLASS_MAPPINGS = {
+	"LatentUpscaler": LatentUpscaler,
+}
+
+NODE_DISPLAY_NAME_MAPPINGS = {
+    "LatentUpscaler": "EFF-Latent Upscaler"
+}		
