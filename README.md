@@ -150,6 +150,24 @@ Please check out our WIKI for any use cases and new developments including workf
 
 </details>
 
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------->
+<details>
+    <summary><b>Latent Upscale nodes</b></summary>
+<ul>
+    <li>Forked from NN latent this node provides some remarkable neural enhancement to the latents making scaling a cool task</li>
+    <li>Both NN latent upscale and Latent upscaler does the Latent improvemnet in remarkable ways.</li>
+    
+</ul>
+<p align="center">
+  <img src="https://github.com/LucianoCirino/efficiency-nodes-media/blob/main/images/nodes/NODE%20-%20Evaluate%20Integers.png" width="320">
+  &nbsp; &nbsp;
+  <img src="https://github.com/LucianoCirino/efficiency-nodes-media/blob/main/images/nodes/NODE%20-%20Evaluate%20Floats.png" width="320">
+  &nbsp; &nbsp;
+  
+</p>
+
+</details>
+
 ## Workflow Examples:
 
 Kindly load all PNG files in same name in the (workflow driectory) to comfyUI to get all this workflows. The PNG files have the json embedded into them and are easy to drag and drop !<br>
