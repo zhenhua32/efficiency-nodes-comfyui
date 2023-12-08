@@ -159,9 +159,9 @@ Please check out our WIKI for any use cases and new developments including workf
     
 </ul>
 <p align="center">
-  <img src="https://github.com/LucianoCirino/efficiency-nodes-media/blob/main/images/nodes/NODE%20-%20Evaluate%20Integers.png" width="320">
+  <img src="images/2023-12-08_19-53-37.png" width="320">
   &nbsp; &nbsp;
-  <img src="https://github.com/LucianoCirino/efficiency-nodes-media/blob/main/images/nodes/NODE%20-%20Evaluate%20Floats.png" width="320">
+  <img src="images/2023-12-08_19-54-11.png" width="320">
   &nbsp; &nbsp;
   
 </p>
