@@ -90,5 +90,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "LatentUpscaler": "EFF-Latent Upscaler"
+    "LatentUpscaler": "EFF_C Latent Upscaler"
 }		
