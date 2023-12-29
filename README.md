@@ -155,7 +155,7 @@ Please check out our WIKI for any use cases and new developments including workf
     <summary><b>Latent Upscale nodes</b></summary>
 <ul>
     <li>Forked from NN latent this node provides some remarkable neural enhancement to the latents making scaling a cool task</li>
-    <li>Both NN latent upscale and Latent upscaler does the Latent improvemnet in remarkable ways. If you face any issue regarding same please install the nodes from this link([SD-Latent-Upscaler](https://github.com/city96/SD-Latent-Upscaler) and the NN latent upscale from [ComfyUI_NNlatentUpscale] (https://github.com/Ttl/ComfyUi_NNLatentUpscale) </li>
+    <li>Both NN latent upscale and Latent upscaler does the Latent improvemnet in remarkable ways. If you face any issue regarding same please install the nodes from this link([SD-Latent-Upscaler]https://github.com/city96/SD-Latent-Upscaler) and the NN latent upscale from [ComfyUI_NNlatentUpscale](https://github.com/Ttl/ComfyUi_NNLatentUpscale) </li>
     
 </ul>
 <p align="center">
