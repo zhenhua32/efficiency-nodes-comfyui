@@ -4143,6 +4143,26 @@ class TSC_Tiled_Upscaler:
         return (script,)
 
 ########################################################################################################################
+# TSC LoRA Stack to String converter
+class TSC_LoRA_Stack2String:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": {"lora_stack": ("LORA_STACK",)}}
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("LoRA string",)
+    FUNCTION = "convert"
+    CATEGORY = "Efficiency Nodes/Misc"
+
+    def convert(self, lora_stack):
+        """
+        Converts a list of tuples into a single space-separated string.
+        Each tuple contains (STR, FLOAT1, FLOAT2) and is converted to the format "<lora:STR:FLOAT1:FLOAT2>".
+        """
+        output = ' '.join(f"<lora:{tup[0]}:{tup[1]}:{tup[2]}>" for tup in lora_stack)
+        return (output,)
+
+########################################################################################################################
 # NODE MAPPING
 NODE_CLASS_MAPPINGS = {
     "KSampler (Efficient)": TSC_KSampler,
@@ -4179,7 +4199,8 @@ NODE_CLASS_MAPPINGS = {
     "Image Overlay": TSC_ImageOverlay,
     "Noise Control Script": TSC_Noise_Control_Script,
     "HighRes-Fix Script": TSC_HighRes_Fix,
-    "Tiled Upscaler Script": TSC_Tiled_Upscaler
+    "Tiled Upscaler Script": TSC_Tiled_Upscaler,
+    "LoRA Stack to String converter": TSC_LoRA_Stack2String
 }
 
 ########################################################################################################################
