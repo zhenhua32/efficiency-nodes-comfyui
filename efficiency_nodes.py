@@ -544,14 +544,14 @@ class TSC_KSampler:
                         end_at_step = steps
 
                     # Perform base model sampling
-                    add_noise = return_with_leftover_noise = True
+                    add_noise = return_with_leftover_noise = "enable"
                     samples = KSamplerAdvanced().sample(model, add_noise, seed, steps, cfg, sampler_name, scheduler,
                                                         positive, negative, latent_image, start_at_step, end_at_step,
                                                         return_with_leftover_noise, denoise=1.0)[0]
 
                     # Perform refiner model sampling
                     if refiner_model and end_at_step < steps:
-                        add_noise = return_with_leftover_noise = False
+                        add_noise = return_with_leftover_noise = "disable"
                         samples = KSamplerAdvanced().sample(refiner_model, add_noise, seed, steps, cfg + REFINER_CFG_OFFSET,
                                                             sampler_name, scheduler, refiner_positive, refiner_negative,
                                                             samples, end_at_step, steps,
