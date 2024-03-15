@@ -1132,19 +1132,33 @@ class TSC_KSampler:
                 elif var_type == "Positive Prompt S/R":
                     search_txt, replace_txt = var
                     if replace_txt != None:
-                        positive_prompt = (positive_prompt[1].replace(search_txt, replace_txt, 1), positive_prompt[1])
+                        # check if we are in the Y loop after the X loop
+                        if positive_prompt[2] is not None:
+                            positive_prompt = (positive_prompt[2].replace(search_txt, replace_txt, 1), positive_prompt[1], positive_prompt[2])
+                        else:
+                            positive_prompt = (positive_prompt[1].replace(search_txt, replace_txt, 1), positive_prompt[1], positive_prompt[1].replace(search_txt, replace_txt, 1))
                     else:
-                        positive_prompt = (positive_prompt[1], positive_prompt[1])
+                        if positive_prompt[2] is not None:
+                            positive_prompt = (positive_prompt[2], positive_prompt[1], positive_prompt[2])
+                        else:
+                            positive_prompt = (positive_prompt[1], positive_prompt[1], positive_prompt[1])
                         replace_txt = search_txt
                     text = f"{replace_txt}"
 
                 # If var_type is "Negative Prompt S/R", update negative_prompt and generate labels
                 elif var_type == "Negative Prompt S/R":
                     search_txt, replace_txt = var
-                    if replace_txt:
-                        negative_prompt = (negative_prompt[1].replace(search_txt, replace_txt, 1), negative_prompt[1])
+                    if replace_txt != None:
+                        # check if we are in the Y loop after the X loop
+                        if negative_prompt[2] is not None:
+                            negative_prompt = (negative_prompt[2].replace(search_txt, replace_txt, 1), negative_prompt[1], negative_prompt[2])
+                        else:
+                            negative_prompt = (negative_prompt[1].replace(search_txt, replace_txt, 1), negative_prompt[1], negative_prompt[1].replace(search_txt, replace_txt, 1))
                     else:
-                        negative_prompt = (negative_prompt[1], negative_prompt[1])
+                        if negative_prompt[2] is not None:
+                            negative_prompt = (negative_prompt[2], negative_prompt[1], negative_prompt[2])
+                        else:
+                            negative_prompt = (negative_prompt[1], negative_prompt[1], negative_prompt[1])
                         replace_txt = search_txt
                     text = f"(-) {replace_txt}"
 
@@ -1466,6 +1480,10 @@ class TSC_KSampler:
 
             # Fill Plot Rows (X)
             for X_index, X in enumerate(X_value):
+                # add a none value in the positive prompt memory.
+                # the tuple is composed of (actual prompt, original prompte before S/R, prompt after X S/R)
+                positive_prompt = (positive_prompt[0], positive_prompt[1], None)
+                negative_prompt = (negative_prompt[0], negative_prompt[1], None)
 
                 # Define X parameters and generate labels
                 add_noise, seed, steps, start_at_step, end_at_step, return_with_leftover_noise, cfg,\
@@ -2313,7 +2331,7 @@ class TSC_XYplot:
             Y_value = [""]
 
         # If types are the same exit. If one isn't "Nothing", print error
-        if X_type != "XY_Capsule" and (X_type == Y_type):
+        if X_type != "XY_Capsule" and (X_type == Y_type) and X_type not in ["Positive Prompt S/R", "Negative Prompt S/R"]:
             if X_type != "Nothing":
                 print(f"{error('XY Plot Error:')} X and Y input types must be different.")
             return (None,)
