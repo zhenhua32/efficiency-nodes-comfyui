@@ -607,6 +607,19 @@ class TSC_KSampler:
                             store_ksampler_results("image", my_unique_id, images)
                         images = ImageUpscaleWithModel().upscale(pixel_upscale_model, images)[0]
                         images = ImageScaleBy().upscale(images, "nearest-exact", upscale_by/4)[0]
+                    elif upscale_type == "both":
+                        for _ in range(iterations):
+                            if images is None:
+                                images = vae_decode_latent(vae, samples, vae_decode)
+                                store_ksampler_results("image", my_unique_id, images)
+                            images = ImageUpscaleWithModel().upscale(pixel_upscale_model, images)[0]
+                            images = ImageScaleBy().upscale(images, "nearest-exact", upscale_by/4)[0]
+
+                            samples = vae_encode_image(vae, images, vae_decode)
+                            upscaled_latent_image = latent_upscale_function().upscale(samples, latent_upscaler, 1)[0]
+                            samples = KSampler().sample(latent_upscale_model, hires_seed, hires_steps, cfg, sampler_name, scheduler,
+                                                                positive, negative, upscaled_latent_image, denoise=hires_denoise)[0]
+                            images = None # set to None when samples is updated
 
                 # ------------------------------------------------------------------------------------------------------
                 # Check if "tile" exists in the script after main sampling has taken place
@@ -3999,7 +4012,7 @@ class TSC_HighRes_Fix:
     @classmethod
     def INPUT_TYPES(cls):
 
-        return {"required": {"upscale_type": (["latent","pixel"],),
+        return {"required": {"upscale_type": (["latent","pixel","both"],),
                              "hires_ckpt_name": (["(use same)"] + folder_paths.get_filename_list("checkpoints"),),
                              "latent_upscaler": (cls.latent_upscalers,),
                              "pixel_upscaler": (cls.pixel_upscalers,),
@@ -4098,6 +4111,17 @@ class TSC_HighRes_Fix:
 
             elif upscale_type == "pixel":
                 pixel_upscale_model = UpscaleModelLoader().load_model(pixel_upscaler)[0]
+
+            elif upscale_type == "both":
+                latent_upscale_function = LatentUpscaleBy
+                latent_upscaler = self.default_latent_upscalers[0]
+                pixel_upscale_model = UpscaleModelLoader().load_model(pixel_upscaler)[0]
+
+                if hires_ckpt_name == "(use same)":
+                    clear_cache(my_unique_id, 0, "ckpt")
+                else:
+                    latent_upscale_model, _, _ = \
+                        load_checkpoint(hires_ckpt_name, my_unique_id, output_vae=False, cache=1, cache_overwrite=True)
 
         control_net = ControlNetLoader().load_controlnet(control_net_name)[0] if use_controlnet is True else None
 
