@@ -452,6 +452,51 @@ function handleHiResFixScript(node, widget) {
         toggleWidget(node, findWidgetByName(node, 'preprocessor_imgs'));
 
         toggleWidget(node, findWidgetByName(node, 'pixel_upscaler'), true);
+        
+    } else if (findWidgetByName(node, 'upscale_type').value === "both") {
+        toggleWidget(node, findWidgetByName(node, 'pixel_upscaler'), true);
+        toggleWidget(node, findWidgetByName(node, 'hires_ckpt_name'), true);
+        toggleWidget(node, findWidgetByName(node, 'latent_upscaler'));
+        toggleWidget(node, findWidgetByName(node, 'use_same_seed'), true);
+        toggleWidget(node, findWidgetByName(node, 'hires_steps'), true);
+        toggleWidget(node, findWidgetByName(node, 'denoise'), true);
+        toggleWidget(node, findWidgetByName(node, 'iterations'), true);
+
+        ensureSeedControlExists(() => {
+            if (findWidgetByName(node, 'use_same_seed').value == true) {
+                toggleWidget(node, findWidgetByName(node, 'seed'));
+                toggleWidget(node, node.seedControl.lastSeedButton);
+                node.seedControl.lastSeedButton.disabled = true; // Disable the button
+            } else {
+                toggleWidget(node, findWidgetByName(node, 'seed'), true);
+                node.seedControl.lastSeedButton.disabled = false; // Enable the button
+                toggleWidget(node, node.seedControl.lastSeedButton, true);
+            }
+        });
+
+        if (findWidgetByName(node, 'use_controlnet').value == '_'){
+            toggleWidget(node, findWidgetByName(node, 'use_controlnet'));
+            toggleWidget(node, findWidgetByName(node, 'control_net_name'));
+            toggleWidget(node, findWidgetByName(node, 'strength'));
+            toggleWidget(node, findWidgetByName(node, 'preprocessor'));
+            toggleWidget(node, findWidgetByName(node, 'preprocessor_imgs'));
+        }
+        else{
+            toggleWidget(node, findWidgetByName(node, 'use_controlnet'), true);
+
+            if (findWidgetByName(node, 'use_controlnet').value == true){
+                toggleWidget(node, findWidgetByName(node, 'control_net_name'), true);
+                toggleWidget(node, findWidgetByName(node, 'strength'), true);
+                toggleWidget(node, findWidgetByName(node, 'preprocessor'), true);
+                toggleWidget(node, findWidgetByName(node, 'preprocessor_imgs'), true);
+            }
+            else{
+                toggleWidget(node, findWidgetByName(node, 'control_net_name'));
+                toggleWidget(node, findWidgetByName(node, 'strength'));
+                toggleWidget(node, findWidgetByName(node, 'preprocessor'));
+                toggleWidget(node, findWidgetByName(node, 'preprocessor_imgs'));
+            }
+        }
     }
 }
 
