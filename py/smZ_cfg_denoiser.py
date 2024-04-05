@@ -364,7 +364,7 @@ def calc_cond(c, current_step):
     return _cond
 
 # ===========================================================
-class CFGNoisePredictor(CFGNoisePredictorOrig):
+class CFGNoisePredictor:
     def __init__(self, model):
         super().__init__(model)
         self.step = 0
