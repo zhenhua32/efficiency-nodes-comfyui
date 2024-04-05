@@ -364,7 +364,6 @@ def calc_cond(c, current_step):
     return _cond
 
 # ===========================================================
-CFGNoisePredictorOrig = comfy.samplers.CFGNoisePredictor
 class CFGNoisePredictor(CFGNoisePredictorOrig):
     def __init__(self, model):
         super().__init__(model)
