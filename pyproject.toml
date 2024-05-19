@@ -1,7 +1,6 @@
 [project]
 name = "efficiency-nodes-comfyui"
-description = "Efficiency Nodes for ComfyUI Version 2.0+
-A collection of ComfyUI custom nodes to help streamline workflows and reduce total node count."
+description = "Efficiency Nodes for ComfyUI Version 2.0 A collection of ComfyUI custom nodes to help streamline workflows and reduce total node count."
 version = "1.0.0"
 license = "LICENSE"
 dependencies = ["clip-interrogator", "simpleeval"]
