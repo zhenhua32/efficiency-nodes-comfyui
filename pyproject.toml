@@ -1,0 +1,15 @@
+[project]
+name = "efficiency-nodes-comfyui"
+description = ""
+version = "1.0.0"
+license = "LICENSE"
+dependencies = ["clip-interrogator", "simpleeval"]
+
+[project.urls]
+Repository = "https://github.com/jags111/efficiency-nodes-comfyui"
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "efficiency-nodes-comfyui"
+Icon = ""
+Models = [{location = "/checkpoints/model.safetensor", model_url = "https://example.com/model.zip"}]
