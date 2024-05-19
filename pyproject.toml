@@ -10,7 +10,7 @@ dependencies = ["clip-interrogator", "simpleeval"]
 Repository = "https://github.com/jags111/efficiency-nodes-comfyui"
 
 [tool.comfy]
-PublisherId = "JAGS"
+PublisherId = "jags111"
 DisplayName = "efficiency-nodes-comfyui"
 Icon = "https://github.com/jags111/efficiency-nodes-comfyui/blob/main/images/jagsP1.png?raw=true"
 Models = [{location = "/checkpoints/model.safetensor", model_url = "https://example.com/model.zip"}]
