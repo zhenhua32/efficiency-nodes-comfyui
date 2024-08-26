@@ -28,7 +28,7 @@ class SeedControl {
         this.lastSeed = -1;
         this.serializedCtx = {};
         this.node = node;
-        this.seedBehavior = 'randomize'; // Default behavior
+        this.seedBehavior = 'fixed'; // Default behavior
 
         let controlAfterGenerateIndex;
 
