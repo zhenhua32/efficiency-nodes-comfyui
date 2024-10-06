@@ -101,6 +101,9 @@ def encode_prompts(positive_prompt, negative_prompt, token_normalization, weight
 ########################################################################################################################
 # TSC Efficient Loader
 class TSC_EfficientLoader:
+    """
+    先从这里开始看吧, 这个文件 5000 行直接看傻了
+    """
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -139,7 +142,7 @@ class TSC_EfficientLoader:
         # Create Empty Latent
         latent = torch.zeros([batch_size, 4, empty_latent_height // 8, empty_latent_width // 8]).cpu()
 
-        # Retrieve cache numbers
+        # Retrieve cache numbers 从配置文件中读取缓存数量
         vae_cache, ckpt_cache, lora_cache, refn_cache = get_cache_numbers("Efficient Loader")
 
         if lora_name != "None" or lora_stack:
@@ -160,6 +163,7 @@ class TSC_EfficientLoader:
             if vae_name == "Baked VAE":
                 vae = get_bvae_by_ckpt_name(ckpt_name)
         else:
+            # 先看不用 lora 的, 先易后难
             model, clip, vae = load_checkpoint(ckpt_name, my_unique_id, cache=ckpt_cache, cache_overwrite=True)
             lora_params = None
 
@@ -170,7 +174,7 @@ class TSC_EfficientLoader:
         else:
             refiner_model = refiner_clip = None
 
-        # Extract clip_skips
+        # Extract clip_skips 或许应该在这里改, 以支持 flux
         refiner_clip_skip = clip_skip[1] if loader_type == "sdxl" else None
         clip_skip = clip_skip[0] if loader_type == "sdxl" else clip_skip
 

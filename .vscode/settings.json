@@ -1,0 +1,8 @@
+{
+    "python.autoComplete.extraPaths": [
+        "G:\\code\\ai\\ComfyUI_windows_portable\\ComfyUI"
+    ],
+    "python.analysis.extraPaths": [
+        "G:\\code\\ai\\ComfyUI_windows_portable\\ComfyUI"
+    ]
+}

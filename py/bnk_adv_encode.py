@@ -5,6 +5,7 @@ from math import gcd
 
 from comfy import model_management
 from comfy.sdxl_clip import SDXLClipModel, SDXLRefinerClipModel, SDXLClipG
+from comfy.text_encoders.flux import FluxClipModel
 
 def _grouper(n, iterable):
     it = iter(iterable)
@@ -238,6 +239,7 @@ def prepareXL(embs_l, embs_g, pooled, clip_balance):
 
 def advanced_encode(clip, text, token_normalization, weight_interpretation, w_max=1.0, clip_balance=.5, apply_to_pooled=True):
     tokenized = clip.tokenize(text, return_word_ids=True)
+    print(f"tokenized: {tokenized}")
     if isinstance(clip.cond_stage_model, (SDXLClipModel, SDXLRefinerClipModel, SDXLClipG)):
         embs_l = None
         embs_g = None
@@ -258,6 +260,19 @@ def advanced_encode(clip, text, token_normalization, weight_interpretation, w_ma
                                                          return_pooled=True,
                                                          apply_to_pooled=apply_to_pooled)
         return prepareXL(embs_l, embs_g, pooled, clip_balance)
+    elif isinstance(clip.cond_stage_model, FluxClipModel):
+        # 支持 flux 模型, 不确定对不对
+        clip.clip_layer(None)
+        clip.cond_stage_model.set_clip_options({"layer": None})
+        print(f"clip.cond_stage_model.t5xxl.layer: {clip.cond_stage_model.t5xxl.layer}")
+        print(f"clip.cond_stage_model.t5xxl.layer_idx: {clip.cond_stage_model.t5xxl.layer_idx}")
+        print(f"clip.layer_idx: {clip.layer_idx}")
+        return advanced_encode_from_tokens(tokenized['l'],
+                                           token_normalization, 
+                                           weight_interpretation, 
+                                           lambda x: clip.encode_from_tokens({'l': x, 't5xxl': tokenized['t5xxl']}, return_pooled=True),
+                                           return_pooled=True,
+                                           w_max=w_max)
     else:
         return advanced_encode_from_tokens(tokenized['l'],
                                            token_normalization, 
@@ -265,6 +280,9 @@ def advanced_encode(clip, text, token_normalization, weight_interpretation, w_ma
                                            lambda x: (clip.encode_from_tokens({'l': x}), None),
                                            w_max=w_max)
 def advanced_encode_XL(clip, text1, text2, token_normalization, weight_interpretation, w_max=1.0, clip_balance=.5, apply_to_pooled=True):
+    """
+    这个实际没用上
+    """
     tokenized1 = clip.tokenize(text1, return_word_ids=True)
     tokenized2 = clip.tokenize(text2, return_word_ids=True)
 

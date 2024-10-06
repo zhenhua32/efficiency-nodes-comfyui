@@ -236,6 +236,7 @@ def load_checkpoint(ckpt_name, id, output_vae=True, cache=None, cache_overwrite=
             elif id not in ids:
                 ids.append(id)
 
+            # 直接从缓存中返回
             return model, clip, vae
 
     if os.path.isabs(ckpt_name):
